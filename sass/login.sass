@@ -1,0 +1,78 @@
+@use 'modules/global'
+@use 'modules/colors'
+@use 'modules/fonts'
+@use 'modules/logo'
+@use 'modules/primary-btn'
+@use 'modules/seconday-btn'
+
+body
+	@include global.global
+
+.container
+	display: grid
+	place-items: center
+	width: 100%
+	height: 100vh
+
+.logo__container
+	margin-bottom: 3rem
+	
+.form__container
+	display: grid
+	grid-template-rows: auto 1fr auto
+	align-self: flex-start
+	width: 300px
+	
+.form__header
+	.title
+		font-size: fonts.$md
+		margin-bottom: .5rem
+		text-align: center
+
+	.subtitle
+		color: colors.$secondary-color
+		font-size: fonts.$sm
+		font-weight: light
+		margin-top: 0
+		margin-bottom: 2rem
+		text-align: center
+	
+.form
+	display: flex
+	flex-direction: column
+		
+	.label
+		font-size: fonts.$sm
+		font-weight: bold
+		margin-bottom: .25rem
+		
+	.input
+		height: 2rem
+		font-size: fonts.$md
+		margin-bottom: .75rem
+		padding: .375rem
+		border: none
+		border-radius: fonts.$radius
+		background-color: colors.$text-input-field
+		
+	.login__btn
+		margin-top: 2rem
+		margin-bottom: 1.875rem
+
+// New password
+.new-password
+	font-size: fonts.$sm
+	text-align: center
+	color: colors.$main-color
+	text-decoration: none
+
+.sign-up__container
+	display: grid
+	width: 300px
+
+	.sign-up__btn
+		width: calc(100% - 1px)
+
+@media (max-width: 640px)
+	.logo__container
+		display: block

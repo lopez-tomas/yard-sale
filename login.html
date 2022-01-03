@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Quicksand font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Yard Sale - Log in</title>
+	<link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+  <main class="container">
+    <figure class="logo__container">
+      <img class="logo" src="./logos/logo_yard_sale.svg" alt="Yard Sale logo">
+    </figure>
+
+		<div class="form__container">
+			<form class="form" action="/">
+				<label class="label" for="email">Email address</label>
+				<input class="input input__email" type="email" id="email" placeholder="Enter your email" required>
+
+				<label class="label" for="password">Password</label>
+				<input class="input input__password" type="password" id="password" placeholder="********" required>
+          
+				<input class="primary__btn login__btn" type="submit" value="Log in">
+			</form>
+
+      <a class="new-password" href="/">Forgot my password</a>
+		</div>
+    <div class="sign-up__container">
+      <button class="secondary__btn sign-up__btn">Sign up</button>
+    </div>
+	</main> 
+</body>
+</html>
