@@ -1,0 +1,11 @@
+@use 'colors'
+
+.input:focus
+    background-color: colors.$secondary-color
+    outline-color: colors.$main-color
+
+.input:invalid
+    outline-color: red
+
+.input:valid
+    outline-color: colors.$main-color
