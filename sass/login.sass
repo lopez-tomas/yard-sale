@@ -19,8 +19,8 @@ body
 	
 .form__container
 	display: grid
+	align-self: flex-end
 	grid-template-rows: auto 1fr auto
-	align-self: flex-start
 	width: 300px
 	
 .form__header
@@ -67,8 +67,9 @@ body
 	text-decoration: none
 
 .sign-up__container
-	display: grid
+	align-self: flex-start
 	width: 300px
+	margin-top: 3.5rem
 
 	.sign-up__btn
 		width: calc(100% - 1px)
@@ -76,3 +77,12 @@ body
 @media (max-width: 640px)
 	.logo__container
 		display: block
+
+	.sign-up__container
+		align-self: flex-end
+		margin-top: 0
+		margin-bottom: 1.25rem
+
+@media (min-width: 300px) and (max-width: 640px)
+	.form__container
+		align-self: flex-start
