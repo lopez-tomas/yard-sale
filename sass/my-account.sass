@@ -1,0 +1,68 @@
+@use 'modules/global'
+@use 'modules/colors'
+@use 'modules/fonts'
+@use 'modules/seconday-btn'
+@use 'modules/inputs'
+
+body
+	@include global.global
+
+.container
+	display: grid
+	place-items: center
+	width: 100%
+	height: 100vh
+	
+.form__container
+	display: grid
+	grid-template-rows: auto 1fr
+	width: 300px
+	
+	.title
+		font-size: fonts.$lg
+		margin-bottom: 2rem
+
+.form
+	display: flex
+	flex-direction: column
+	
+	div
+		display: flex
+		flex-direction: column
+		
+	.label
+		font-size: fonts.$sm
+		font-weight: bold
+		margin-bottom: .25rem // 4px
+	
+	.value
+		font-size: fonts.$md
+		color: colors.$secondary-color
+		margin-bottom: 1.375rem
+		
+	//.input
+		//height: 2rem
+		//font-size: fonts.$md
+		//margin-bottom: .75rem // 12px
+		//padding: .375rem
+		//border: none
+		//border-radius: fonts.$radius
+		//background-color: colors.$text-input-field
+	
+	//.input__name, .input__email, .input__password
+		//margin-bottom: 1.375rem // 22px
+
+.create-account__btn
+	margin-top: 1rem
+
+@media (max-width: 640px)
+	.form__container
+		height: 100%
+
+	.form
+		height: 100%
+		justify-content: space-between
+
+		.create-account__btn
+			margin-top: 0
+			margin-bottom: 1.25rem 
