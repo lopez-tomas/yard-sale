@@ -1,0 +1,117 @@
+@use 'modules/global'
+@use 'modules/colors'
+@use 'modules/fonts'
+
+body
+    @include global.global
+
+$card-size__desktop: 240px
+$gap__desktop: 26px
+
+$card-size__mobile: 140px
+$gap__mobile: 13px
+
+$cart-icon__desktop: 35px
+$cart-icon__desktop--hover: 38px
+
+$cart-icon__mobile: 28px
+$cart-icon__mobile--hover: 31px
+
+.cards__container
+    display: grid
+    grid-template-columns: repeat(auto-fill, $card-size__desktop)
+    gap: $gap__desktop
+    place-content: center
+
+.card
+    width: $card-size__desktop
+
+    &--image
+        display: flex
+        flex-direction: column
+        justify-content: center
+        margin: 0
+        width: $card-size__desktop
+        height: $card-size__desktop
+        
+        .image
+            width: 100%
+            height: 100%
+            border-radius: 20px
+            object-fit: cover
+        
+        .cart--message
+            display: inline-block
+            position: absolute
+            align-self: center
+
+            padding: 4px 14px
+            border-radius: 20px
+
+            background-color: colors.$darker-main-color
+            color: colors.$white
+            font-size: fonts.$sm
+            font-weight: bold
+            text-align: center
+
+            opacity: 1
+            transition: opacity 2s
+
+        .hidden
+            display: none
+
+    &--footer
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: 12px
+        
+        .info
+            .price
+                font-size: fonts.$md
+                font-weight: bold
+                margin-top: 0
+                margin-bottom: 4px
+
+            .product
+                font-size: fonts.$sm
+                margin-top: 0
+                margin-bottom: 0
+                color: colors.$secondary-color
+        
+        .cart__container
+            margin: 0
+            
+            .cart
+                width: $cart-icon__desktop
+                height: $cart-icon__desktop
+                cursor: pointer
+
+            .cart:hover
+                width: $cart-icon__desktop--hover
+                height: $cart-icon__desktop--hover
+
+@media (max-width: 640px)
+    .cards__container
+        grid-template-columns: repeat(2, $card-size__mobile)
+        gap: $gap__mobile
+
+    .card
+        width: $card-size__mobile
+
+        &--image
+            width: $card-size__mobile
+            height: $card-size__mobile
+
+        &--footer
+            .cart__container
+                .cart
+                    width: $cart-icon__mobile
+                    height: $cart-icon__mobile
+                    cursor: pointer
+
+                .cart:hover
+                    width: $cart-icon__mobile--hover
+                    height: $cart-icon__mobile--hover
+
+                    
