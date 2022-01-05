@@ -15,18 +15,20 @@ body
 	
 .form__container
 	display: grid
-	align-self: center
+	grid-template-rows: auto 1fr
 	width: 300px
-
-.form__header
-	margin-bottom: 2rem
 	
 	.title
 		font-size: fonts.$lg
-	
+		margin-bottom: 2rem
+
 .form
 	display: flex
 	flex-direction: column
+	
+	div
+		display: flex
+		flex-direction: column
 		
 	.label
 		font-size: fonts.$sm
@@ -45,21 +47,17 @@ body
 	.input__name, .input__email, .input__password
 		margin-bottom: 1.375rem // 22px
 
-.create-account__container
-	//align-self: flex-start
-	//width: 300px
-
 .create-account__btn
 	margin-top: 1rem
-		//width: calc(100% - 1px)
 
 @media (max-width: 640px)
-	//.form__container
-		//heigth: 100%
+	.form__container
+		height: 100%
 
-	//.create-account__container
-		//align-self: flex-end
-		//margin-bottom: 1.25rem
-	.create-account__btn
-		margin-top: 13rem
-		align-self: flex-end
+	.form
+		height: 100%
+		justify-content: space-between
+
+		.create-account__btn
+			margin-top: 0
+			margin-bottom: 1.25rem 
