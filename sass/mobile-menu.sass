@@ -1,0 +1,46 @@
+@use 'modules/global'
+@use 'modules/colors'
+@use 'modules/fonts'
+
+$separation: 20px
+$li-margin: 35px
+$title-margin: $li-margin + 5px
+
+body
+    @include global.global
+
+.mobile-menu
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100vh
+    padding: $separation
+
+ul
+    margin: 0
+    padding: 0
+    
+ul.top
+    border-bottom: 1px solid colors.$secondary-color
+
+    .top-title
+        text-transform: uppercase
+        margin-bottom: $title-margin
+    
+ul.top, ul.mid
+    li
+        margin-bottom: $li-margin
+        font-weight: bold
+
+    a
+        color: colors.$black
+    
+ul.bottom
+    li
+        font-size: fonts.$sm
+
+    .email 
+        margin-bottom: 8px
+
+    .sign-out
+        color: colors.$main-color
