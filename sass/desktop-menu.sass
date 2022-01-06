@@ -1,0 +1,42 @@
+@use 'modules/global'
+@use 'modules/colors'
+@use 'modules/fonts'
+
+$separation: 20px
+$hr-opacity: 0.3
+
+body
+    @include global.global
+
+.desktop-menu
+    width: 100px
+    heigth: auto
+    border: 1px solid colors.$secondary-color
+    border-radius: 6px
+    padding: $separation
+
+    ul
+        margin: 0
+        padding: 0
+        text-align: end
+
+        li
+            display: inline-block
+
+        li:not(:last-child)
+            margin-bottom: $separation
+            font-weight: bold
+
+            a
+                color: colors.$black
+        
+        hr
+            margin: $separation 0
+            color: colors.$secondary-color
+            background-color: colors.$secondary-color
+            opacity: $hr-opacity
+
+        li:last-child
+            a
+                font-size: fonts.$sm
+                color: colors.$main-color
