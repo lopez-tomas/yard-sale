@@ -3,6 +3,7 @@
 
 $image-size: 60px
 $separation: 16px
+$mini-separation: 6px
 
 .container
     display: grid
@@ -21,19 +22,19 @@ $separation: 16px
         font-size: fonts.$md
 
     .order__resume
-        display: flex
-        justify-content: space-between
-        align-items: center
-        margin-bottom: $separation
-        padding: 0 $separation
-        border-radius: 8px
+        display: grid
+        grid-template-columns: auto auto
+        padding: $separation $separation 14px $separation
         background-color: colors.$text-input-field
 
         div:first-child
+            padding: ($mini-separation + 2) $mini-separation
+
             .date, .quantity
                 font-size: fonts.$sm
 
             .date
+                margin-top: 0
                 margin-bottom: 6px
                 font-weight: bold
 
@@ -49,3 +50,9 @@ $separation: 16px
     .order__container
         .title
             display: block
+
+@mixin total
+    margin: 0
+    padding: $mini-separation ($mini-separation * 2)
+    justify-self: flex-end
+    align-self: center
