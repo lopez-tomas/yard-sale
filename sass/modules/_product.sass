@@ -1,0 +1,36 @@
+@use 'colors'
+@use 'fonts'
+
+$image-size: 60px
+$separation: 16px
+
+@mixin product
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: $separation
+    padding-right: $separation
+
+    div
+        display: flex
+        align-items: center
+
+        .product--image__container
+            width: $image-size
+            height: $image-size
+            margin: 0
+            margin-right: $separation
+
+            .product--image
+                width: 100%
+                height: 100%
+                border-radius: 12px
+                object-fit: cover
+
+        .product--name
+            font-size: fonts.$sm
+            color: colors.$secondary-color
+
+    &--price
+        font-size: fonts.$sm
+        font-weight: bold

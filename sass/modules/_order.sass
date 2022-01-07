@@ -1,0 +1,51 @@
+@use 'colors'
+@use 'fonts'
+
+$image-size: 60px
+$separation: 16px
+
+.container
+    display: grid
+    place-items: center
+    width: 100%
+    height: 100vh
+
+.order__container
+    display: grid
+    width: 300px
+
+    .title
+        display: none
+        margin-top: 0px
+        margin-bottom: 2rem
+        font-size: fonts.$md
+
+    .order__resume
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: $separation
+        padding: 0 $separation
+        border-radius: 8px
+        background-color: colors.$text-input-field
+
+        div:first-child
+            .date, .quantity
+                font-size: fonts.$sm
+
+            .date
+                margin-bottom: 6px
+                font-weight: bold
+
+            .quantity
+                margin-top: 0
+                color: colors.$secondary-color
+
+        .total
+            font-size: fonts.$sm
+            font-weight: bold
+
+@media (min-width: 640px)
+    .order__container
+        .title
+            display: block
