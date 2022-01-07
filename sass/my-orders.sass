@@ -3,7 +3,6 @@
 @use 'modules/order'
 @use 'modules/product'
 
-$rotation-time: .30s
 $separation: 6px
 
 body
@@ -25,13 +24,7 @@ body
                 margin: 0
                 padding: $separation
 
-                .normal
-                    transform: rotate(0deg)
-                    transition: transform $rotation-time ease-in-out
-
-                .rotated
-                    transform: rotate(90deg)
-                    transition: transform $rotation-time ease-in-out
+                @include order.arrow-rotation
 
         .products
             @include product.products

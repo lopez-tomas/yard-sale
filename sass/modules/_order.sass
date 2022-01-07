@@ -4,6 +4,7 @@
 $image-size: 60px
 $separation: 16px
 $mini-separation: 6px
+$rotation-time: .30s
 
 .container
     display: grid
@@ -57,3 +58,12 @@ $mini-separation: 6px
     padding: $mini-separation ($mini-separation * 2)
     justify-self: flex-end
     align-self: center
+
+@mixin arrow-rotation
+    .normal
+        transform: rotate(0deg)
+        transition: transform $rotation-time ease-in-out
+
+    .rotated
+        transform: rotate(90deg)
+        transition: transform $rotation-time ease-in-out
