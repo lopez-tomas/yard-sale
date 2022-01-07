@@ -1,0 +1,77 @@
+@use 'modules/global'
+@use 'modules/colors'
+@use 'modules/order'
+@use 'modules/product'
+
+$rotation-time: .30s
+$separation: 6px
+
+body
+    @include global.global
+
+.order__container
+    .order__resume
+        display: grid
+        grid-template-columns: auto auto
+        grid-template-rows: auto auto
+        padding: $separation $separation 14px 6px
+        background-color: violet
+        cursor: pointer
+        
+        div:nth-child(1)
+            padding: ($separation + 2) $separation
+            
+            .date
+                margin-top: 0
+            .quantity
+                margin-bottom: 0
+        
+        div:nth-child(2)
+            display: grid
+            grid-template-columns: auto auto
+            place-items: center
+            
+            .total
+                margin: 0
+                padding: $separation ($separation * 2)
+        
+            .arrow__container
+                margin: 0
+                padding: $separation
+                
+                .normal
+                    transform: rotate(0deg)
+                    transition: transform $rotation-time ease-in-out
+
+                .rotated
+                    transform: rotate(90deg)
+                    transition: transform $rotation-time ease-in-out
+                    
+        .products
+            display: none
+            grid-column-end: span 2
+            padding: 8px
+            border-radius: 8px
+            background-color: colors.$white
+
+            .product
+                @include product.product
+                padding: 0
+                
+                div
+                    .product--image__container
+                        margin: 0
+                        padding: $separation
+                        padding-right: $separation * 2
+
+                    .product--name
+                        margin: 0
+                        padding: $separation
+                        padding-left: $separation * 2
+                
+                &--price
+                    margin: 0
+                    padding: 0 $separation
+
+            .product:last-child
+                margin-bottom: 0
