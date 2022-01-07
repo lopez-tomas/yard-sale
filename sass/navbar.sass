@@ -1,0 +1,172 @@
+@use 'modules/global'
+@use 'modules/fonts'
+@use 'modules/colors'
+@use 'modules/order'
+
+$separation: 6px
+$separationx2: $separation * 2
+$arrow-size: .60rem
+
+body
+    @include global.global
+
+.menu, .menu-left, .categories, .menu-right, .account
+    display: flex
+
+.menu
+    justify-content: space-between
+    width: 100%
+    padding: $separation 0
+
+    &-icon__container
+        display: none
+        align-self: center
+        width: 1.5rem
+        height: 1.5rem
+        padding: $separation $separationx2
+        cursor: pointer
+
+        &-icon
+            width: 100%
+            height: 100%
+
+    &-left
+        .logo__container
+            width: 10rem
+            margin: 0 3rem
+
+            .logo
+                width: 100%
+                height: 100%
+
+        .mini-logo__container
+            display: none
+            align-self: center
+            width: 1.5rem
+            height: 1.5rem
+            padding: $separation $separationx2
+            
+            .mini-logo
+                width: 100%
+                height: 100%
+
+        .categories
+            height: 100%
+            margin: 0
+            padding: 0
+
+            li:first-child
+                :hover
+                    color: colors.$white
+                    background-color: colors.$main-color
+
+                a
+                    padding: $separation $separationx2
+                    border: 1px solid colors.$main-color
+                    border-radius: $separation + 2
+                    color: colors.$main-color
+
+            li
+                align-self: center
+                margin: 0 $separationx2
+
+                :hover
+                    color: colors.$dark
+
+    &-right
+        .account
+            height: 100%
+            cursor: pointer
+
+            .email, .arrow
+                align-self: center
+
+            .email
+                margin: 0
+                padding: 0 $separationx2
+                padding-right: $separation
+                font-size: fonts.$sm
+
+            .arrow
+                width: $arrow-size
+                height: $arrow-size
+
+            @include order.arrow-rotation
+
+        .cart__container
+            align-self: center
+            width: 1.5rem
+            height: 1.5rem
+            margin-left: $separation
+            margin-right: 3rem
+            padding: $separation $separationx2
+            
+            .cart
+                cursor: pointer
+
+figure
+    margin: 0
+
+a
+    font-size: fonts.$sm
+    font-weight: bold
+    color: colors.$secondary-color
+
+@media (max-width: 1040px)
+    .menu
+        &-left
+            .logo__container
+                display: none
+                margin: 0
+
+            .mini-logo__container
+                display: block
+                margin: 0 1rem
+
+        &-right
+            .cart__container
+                margin-right: 1rem
+                margin-left: 0
+
+@media (max-width: 800px)
+    .menu
+        &-icon__container
+            display: block
+
+        &-left
+            .logo__container
+                display: block
+
+            .mini-logo__container
+                display: none
+            
+            .categories:first-child
+                margin-left: 1rem
+
+        &-left .categories, &-right .account
+            display: none
+
+        &-right
+            .cart__container
+                margin-right: 1rem
+
+@media (max-width: 450px)
+    .menu
+        &-icon__container
+            margin-left: .5rem
+            padding-right: 0
+        
+        &-right
+            .cart__container
+                padding-left: 0
+                margin-right: .5rem
+
+@media (max-width: 380px)
+    .menu
+        &-icon__container
+            margin-left: .5rem
+        
+        &-right
+            .cart__container
+                padding-left: 0
+                margin-right: .5rem
