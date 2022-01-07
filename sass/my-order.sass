@@ -1,10 +1,37 @@
 @use 'modules/global'
 @use 'modules/order'
 @use 'modules/product'
+@use 'modules/colors'
+
+$separation: 6px
 
 body
     @include global.global
 
 .order__container
-    .product
-        @include product.product
+    .order__resume
+        margin: 0
+
+        .total
+            @include order.total
+
+        .products
+            @include product.products
+
+            .product
+                @include product.product
+
+                div
+                    .product--image__container
+                        @include product.product-image__container
+                        padding-right: $separation * 2
+
+                    .product--name
+                        @include product.product-name
+
+                &--price
+                    @include product.product-price
+
+            .product:last-child
+                @include product.last-child
+                margin-bottom: 0

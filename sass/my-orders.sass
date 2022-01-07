@@ -11,34 +11,20 @@ body
 
 .order__container
     .order__resume
-        display: grid
-        grid-template-columns: auto auto
-        grid-template-rows: auto auto
-        padding: $separation $separation 14px 6px
-        background-color: violet
         cursor: pointer
-        
-        div:nth-child(1)
-            padding: ($separation + 2) $separation
-            
-            .date
-                margin-top: 0
-            .quantity
-                margin-bottom: 0
-        
+
         div:nth-child(2)
             display: grid
             grid-template-columns: auto auto
             place-items: center
-            
+
             .total
-                margin: 0
-                padding: $separation ($separation * 2)
-        
+                @include order.total
+
             .arrow__container
                 margin: 0
                 padding: $separation
-                
+
                 .normal
                     transform: rotate(0deg)
                     transition: transform $rotation-time ease-in-out
@@ -46,32 +32,24 @@ body
                 .rotated
                     transform: rotate(90deg)
                     transition: transform $rotation-time ease-in-out
-                    
+
         .products
+            @include product.products
             display: none
-            grid-column-end: span 2
-            padding: 8px
-            border-radius: 8px
-            background-color: colors.$white
 
             .product
                 @include product.product
-                padding: 0
-                
+
                 div
                     .product--image__container
-                        margin: 0
-                        padding: $separation
+                        @include product.product-image__container
                         padding-right: $separation * 2
 
                     .product--name
-                        margin: 0
-                        padding: $separation
-                        padding-left: $separation * 2
-                
+                        @include product.product-name
+
                 &--price
-                    margin: 0
-                    padding: 0 $separation
+                    @include product.product-price
 
             .product:last-child
-                margin-bottom: 0
+                @include product.last-child
