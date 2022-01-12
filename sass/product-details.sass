@@ -1,0 +1,75 @@
+@use 'modules/global'
+@use 'modules/fonts'
+@use 'modules/colors'
+@use 'modules/primary-btn'
+@use 'navbar'
+
+$product-image: 320px
+$big-separation: 36px
+$medium-separation: 24px
+$small-separation: 4px
+
+body
+    @include global.global
+    width: 100%
+
+.product-detail
+    width: $product-image
+    height: 100vh - 10vh
+    position: absolute
+    right: 0
+
+    .product-image__container
+        margin: 0
+        width: $product-image
+        height: 50%
+        margin-bottom: $big-separation
+
+        .product-image
+            width: 100%
+            height: 100%
+            border-bottom-right-radius: 20px
+            border-bottom-left-radius: 20px
+            object-fit: cover
+
+    .product-info
+        display: flex
+        flex-direction: column
+        height: 100% - 60%
+        margin: 0 12px
+
+        div:first-child
+            margin-bottom: $medium-separation
+
+            .product-price, .product-name
+                font-size: fonts.$md
+
+            .product-price
+                color: colors.$dark
+                font-weight: bold
+                margin-bottom: $small-separation
+            .product-name
+                color: colors.$secondary-color
+
+        .product-description
+            margin-bottom: $big-separation
+            font-size: fonts.$sm
+            color: colors.$secondary-color
+
+    .add__button
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: fonts.$md
+
+        img
+            margin-right: $small-separation
+p
+    margin: 0
+
+@media (max-width: 640px)
+    .product-detail
+        width: 100%
+    
+        .product-image__container
+            width: 100%

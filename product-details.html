@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Quicksand font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Yard Sale - Product details</title>
+  <link rel="shortcut icon" href="./logos/favicon_yard_sale.svg">
+  <link rel="stylesheet" href="./css/product-details.css">
+</head>
+<body>
+  <nav class="menu">
+    <figure class="menu-icon__container">
+			<img class="menu-icon" src="./icons/icon_menu.svg" alt="Menu icon">
+		</figure>
+
+		<div class="menu-left">
+			<figure class="logo__container">
+				<img class="logo" src="./logos/logo_yard_sale.svg" alt="Yard Sale logo">
+			</figure>
+
+			<figure class="mini-logo__container">
+				<img class="mini-logo" src="./logos/favicon_yard_sale.svg" alt="Yard Sale logo">
+			</figure>
+
+			<ul class="categories">
+				<li>
+					<a href="">All</a>
+				</li>
+
+				<li>
+					<a href="">Clothes</a>
+				</li>
+
+				<li>
+					<a href="">Electronics</a>
+				</li>
+
+				<li>
+					<a href="">Furnitures</a>
+				</li>
+
+				<li>
+					<a href="">Toys</a>
+				</li>
+
+				<li>
+					<a href="">Others</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="menu-right">
+			<div class="account" onclick="rotateArrow()">
+				<p class="email">tomaslopez@gmail.com</p>
+
+        <img class="arrow" src="./icons/flechita.svg" alt="Rigth arrow">
+			</div>	
+
+    	<figure class="cart__container">
+				<!--<img class="cart" src="./icons/icon_shopping_cart.svg" alt="Cart icon" >-->
+				<img class="cart" src="./icons/icon_shopping_cart_notification.svg" alt="Shopping cart icon">
+			</figure>
+		</div>
+	</nav>
+
+	<aside class="product-detail">
+		<figure class="product-image__container">
+			<img class="product-image" src="./images/bike.jpeg" alt="Product">
+		</figure>
+    
+		<div class="product-info">
+			<div>
+				<p class="product-price">$ 120,00</p>
+				<p class="product-name">Bike</p>
+			</div>
+			
+			<div class="product-description">
+				<p>
+					With its functional and practial interior, this refrigerator 
+					also fulfills a decorative function, adding personality and 
+					a retro-vintage aesthetic to your kitchen or workplace.
+				</p>
+			</div>
+
+			<button class="primary__btn add__button" type="submit">
+				<img src="./icons/bt_add_to_cart.svg" alt="Add to cart">
+				Add to cart
+			</button>
+		</div>
+
+	</aside>
+
+	<!-- rotateArrow() -->
+	<script>
+		function rotateArrow() {
+    	const arrow = document.querySelector('.arrow');
+
+    	if (!arrow.classList.contains("rotated")) {
+        arrow.classList.add("rotated");
+        arrow.classList.remove("normal");
+
+    	} else {
+        arrow.classList.remove("rotated");
+        arrow.classList.add("normal");
+    	}
+		}
+	</script>
+</body>
+</html>
