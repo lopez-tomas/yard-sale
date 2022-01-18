@@ -1,0 +1,85 @@
+@use 'modules/global'
+@use 'modules/fonts'
+@use 'modules/colors'
+@use 'modules/order'
+@use 'modules/product'
+@use 'modules/primary-btn'
+@use 'my-order'
+
+$product-image: 320px
+$big-separation: 36px
+$medium-separation: 24px
+$separation: 6px
+$small-separation: 4px
+
+body
+    @include global.global
+    width: 100%
+
+.product-detail
+    width: $product-image
+    height: 100vh
+    position: absolute
+    right: 0
+    box-sizing: border-box
+
+    .products--header
+        display: flex
+        padding: 8px 14px
+
+        .arrow
+            padding: 0 8px
+            transform: rotate(180deg)
+
+        .title
+            font-size: fonts.$md
+            font-weight: bold
+            padding-left: $big-separation
+
+    .products
+        @include product.products
+        height: 100%
+
+        .product
+            @include product.product
+
+            div:first-child
+                .product--image__container
+                    @include product.product-image__container
+                    padding-right: $separation * 2
+
+                .product--name
+                    @include product.product-name
+
+            div:nth-child(2)
+                .product--price
+                    @include product.product-price
+                    padding-right: $separation * 2
+
+                .product--remove
+                    text-transform: uppercase
+                    color: colors.$text-input-field
+                    font-weight: bold
+
+        .total
+            display: flex
+            justify-content: space-between
+            padding: $big-separation $separation
+
+            p
+                font-size: fonts.$sm
+                font-weight: bold
+
+                &:last-child
+                font-size: fonts.$md
+
+p
+    margin: 0
+
+@media (max-width: 640px)
+    .product-detail
+        width: 100%
+
+        .products
+            .total
+                padding-top: $separation
